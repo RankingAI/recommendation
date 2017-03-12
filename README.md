@@ -1,1 +1,1 @@
-# recommendation
+This project will end up with embracing recommendation service with high performance, data processing, model learning, and simulated request client. All relevant technics will be tested and included. 
