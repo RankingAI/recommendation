@@ -1,0 +1,2 @@
+/usr/bin/ar qc libRankingService.a  CMakeFiles/RankingService.dir/__/RankingServiceProtocol/OnlineRankingService.cpp.o CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_constants.cpp.o CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_types.cpp.o
+/usr/bin/ranlib libRankingService.a

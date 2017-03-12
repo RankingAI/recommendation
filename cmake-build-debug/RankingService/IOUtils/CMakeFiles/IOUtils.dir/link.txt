@@ -1,0 +1,2 @@
+/usr/bin/ar qc libIOUtils.a  
+/usr/bin/ranlib libIOUtils.a

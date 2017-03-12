@@ -1,0 +1,1 @@
+/usr/local/bin/g++    -Wall -fpic -DDEBUG -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/Test.dir/Test.cpp.o  -o Test -lboost_timer -lboost_system -lcpp_redis -ltacopie 

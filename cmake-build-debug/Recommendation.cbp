@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="Recommendation" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\IOUtils\;CMake Files\Test\;CMake Files\RankingClient\;CMake Files\RankingService\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test">
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 test" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install/local">
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="list_install_components">
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install">
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 install" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install/strip">
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="Recommendation">
+         <Option output="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Recommendation" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/Library/Frameworks" />
+            <Add directory="/System/Library/Frameworks" />
+            <Add directory="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingService" />
+            <Add directory="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/backward" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/x86_64-apple-darwin15.0.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include-fixed" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 Recommendation" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="Recommendation/fast">
+         <Option output="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Recommendation" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/Library/Frameworks" />
+            <Add directory="/System/Library/Frameworks" />
+            <Add directory="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingService" />
+            <Add directory="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/backward" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/x86_64-apple-darwin15.0.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include-fixed" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 Recommendation/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="Test">
+         <Option output="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Test/Test" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Test" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/Library/Frameworks" />
+            <Add directory="/System/Library/Frameworks" />
+            <Add directory="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/backward" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/x86_64-apple-darwin15.0.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include-fixed" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Test/Makefile&quot;  VERBOSE=1 Test" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="Test/fast">
+         <Option output="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Test/Test" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Test" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/Library/Frameworks" />
+            <Add directory="/System/Library/Frameworks" />
+            <Add directory="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/backward" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/x86_64-apple-darwin15.0.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include-fixed" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Test/Makefile&quot;  VERBOSE=1 Test/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/Test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="RankingClient">
+         <Option output="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingClient/RankingClient" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingClient" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/Library/Frameworks" />
+            <Add directory="/System/Library/Frameworks" />
+            <Add directory="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingServiceProtocol" />
+            <Add directory="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/backward" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/x86_64-apple-darwin15.0.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include-fixed" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingClient/Makefile&quot;  VERBOSE=1 RankingClient" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingClient/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingClient/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingClient/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="RankingClient/fast">
+         <Option output="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingClient/RankingClient" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingClient" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/Library/Frameworks" />
+            <Add directory="/System/Library/Frameworks" />
+            <Add directory="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingServiceProtocol" />
+            <Add directory="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/backward" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/x86_64-apple-darwin15.0.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include-fixed" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingClient/Makefile&quot;  VERBOSE=1 RankingClient/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingClient/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingClient/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingClient/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="RankingService">
+         <Option output="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingService/libRankingService.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingService" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/Library/Frameworks" />
+            <Add directory="/System/Library/Frameworks" />
+            <Add directory="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingServiceProtocol" />
+            <Add directory="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/backward" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/x86_64-apple-darwin15.0.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include-fixed" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingService/Makefile&quot;  VERBOSE=1 RankingService" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingService/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingService/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingService/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="RankingService/fast">
+         <Option output="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingService/libRankingService.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingService" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/Library/Frameworks" />
+            <Add directory="/System/Library/Frameworks" />
+            <Add directory="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingServiceProtocol" />
+            <Add directory="/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/backward" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/../../../../include/c++/6.1.0/x86_64-apple-darwin15.0.0" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include" />
+            <Add directory="/usr/local/lib/gcc/x86_64-apple-darwin15.0.0/6.1.0/include-fixed" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingService/Makefile&quot;  VERBOSE=1 RankingService/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingService/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingService/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug/RankingService/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingClient/RankingClient.cpp">
+         <Option target="RankingClient"/>
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingService/RankingService.hpp">
+         <Option target="RankingService"/>
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingServiceProtocol/OnlineRankingService.cpp">
+         <Option target="RankingClient"/>
+         <Option target="RankingService"/>
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingServiceProtocol/OnlineRankingService.h">
+         <Option target="RankingClient"/>
+         <Option target="RankingService"/>
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingServiceProtocol/RankingService_constants.cpp">
+         <Option target="RankingClient"/>
+         <Option target="RankingService"/>
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingServiceProtocol/RankingService_constants.h">
+         <Option target="RankingClient"/>
+         <Option target="RankingService"/>
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingServiceProtocol/RankingService_types.cpp">
+         <Option target="RankingClient"/>
+         <Option target="RankingService"/>
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingServiceProtocol/RankingService_types.h">
+         <Option target="RankingClient"/>
+         <Option target="RankingService"/>
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/Recommendation.cpp">
+         <Option target="Recommendation"/>
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/Test/Test.cpp">
+         <Option target="Test"/>
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/RecommendationConfig.h.in">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/IOUtils/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\IOUtils\" />
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/Test/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\Test\" />
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingClient/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\RankingClient\" />
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingService/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\RankingService\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

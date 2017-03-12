@@ -1,0 +1,16 @@
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles/test.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles/install/local.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles/edit_cache.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles/list_install_components.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles/install.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles/install/strip.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles/rebuild_cache.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles/Recommendation.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService/CMakeFiles/test.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService/CMakeFiles/install/local.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService/CMakeFiles/edit_cache.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService/CMakeFiles/RankingService.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService/CMakeFiles/list_install_components.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService/CMakeFiles/install.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService/CMakeFiles/install/strip.dir
+/Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService/CMakeFiles/rebuild_cache.dir
