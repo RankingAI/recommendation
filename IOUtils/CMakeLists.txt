@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.5)
 #SET(IOUTILS_INCLUDE_DIR ${IOUTILS_INCLUDE_DIR} PARENT_SCOPE)
 #
 SET(REDIS_LIBS cpp_redis tacopie)
-SET(IOUTILS_SRCS Redis.hpp)
+SET(IOUTILS_SRCS Redis.hpp Config.hpp)
 
 # ===================== build
 if(TARGET IOUtils)

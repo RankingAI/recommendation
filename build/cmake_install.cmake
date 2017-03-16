@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/ypz/local")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,6 +43,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
+  include("/Users/yuanpingzhou/project/workspace/c++/recommendation/build/IOUtils/cmake_install.cmake")
+  include("/Users/yuanpingzhou/project/workspace/c++/recommendation/build/Test/cmake_install.cmake")
+  include("/Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingClient/cmake_install.cmake")
   include("/Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService/cmake_install.cmake")
 
 endif()

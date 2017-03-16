@@ -45,7 +45,7 @@ INCLUDE_DIRECTORIES(${RANKINGSERVICE_INCLUDE_DIR})
 ADD_EXECUTABLE(Recommendation ${RECOMMENDATION_SRCS})
 
 # libraries relied, -l option
-TARGET_LINK_LIBRARIES(Recommendation RankingService)
+TARGET_LINK_LIBRARIES(Recommendation RankingService boost_program_options)
 
 # ============================== Test
 ENABLE_TESTING()

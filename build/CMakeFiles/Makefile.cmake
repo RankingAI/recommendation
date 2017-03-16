@@ -8,8 +8,11 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
+  "../IOUtils/CMakeLists.txt"
+  "../RankingClient/CMakeLists.txt"
   "../RankingService/CMakeLists.txt"
   "../RecommendationConfig.h.in"
+  "../Test/CMakeLists.txt"
   "CMakeFiles/3.5.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.5.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.5.2/CMakeSystem.cmake"
@@ -110,11 +113,16 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.5.2/CMakeCXXCompiler.cmake"
   "RecommendationConfig.h"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "IOUtils/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Test/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "RankingClient/CMakeFiles/CMakeDirectoryInformation.cmake"
   "RankingService/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Recommendation.dir/DependInfo.cmake"
+  "Test/CMakeFiles/Test.dir/DependInfo.cmake"
+  "RankingClient/CMakeFiles/RankingClient.dir/DependInfo.cmake"
   "RankingService/CMakeFiles/RankingService.dir/DependInfo.cmake"
   )

@@ -7,35 +7,36 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/exception/all.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/program_options.hpp>
+#include <boost/program_options/errors.hpp>
 
 #include "RecommendationConfig.h"
 #include "RankingService.hpp"
 
 using namespace boost;
+namespace opt = boost::program_options;
 
 int main(int argc,char* argv[]) {
 
-  if((argc != 2) || (std::strlen(argv[1]) == 0)){
-	std::cout << format("%s Version %d.%d") % argv[0] % RECOMMENDATION_VERSION_MAJOR % RECOMMENDATION_VERSION_MINOR << std::endl;
-	std::cout << format("Usage: %s ServicePort[int|AnyString]\n") % argv[0];
-	return 1;
-  }
-  int port = -1;
+  opt::options_description desc("options : ");
+  desc.add_options()
+          ("config",opt::value<std::string>()->default_value("./ranking_service.properties"),"Ranking Service Configure File")
+          ("help,h","what to options to type in")
+          ;
+  opt::variables_map vm;
   try{
-	port = lexical_cast<int>(argv[1]);
+    opt::store(opt::parse_command_line(argc,argv,desc),vm);
   }
-  catch (exception& e){
-	std::cerr << diagnostic_information(e,"atoi error") << std::endl;
+  catch(const opt::required_option& e){
+	std::cerr << "Failed to parse parameters, " << e.what() << std::endl;
   }
-  RankingService* rs = nullptr;
-  if(port == -1) {
-	rs = new RankingService();
+  boost::optional<RankingService> rs = RankingService::GetInstance(vm["config"].as<std::string>());
+  if(rs){
+	rs.get().run();
   }
   else{
-	rs = new RankingService(port);
+    std::cout << "Initial ranking service failed, you'd better check your configure file thoroughly." << std::endl;
   }
-  rs->run();
-  delete rs;
 
   return 0;
 }

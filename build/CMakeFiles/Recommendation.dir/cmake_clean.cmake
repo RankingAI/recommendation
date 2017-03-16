@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Recommendation.dir/Recommendation.cpp.o"
-  "CMakeFiles/Recommendation.dir/RankingClient.cpp.o"
   "Recommendation.pdb"
   "Recommendation"
 )

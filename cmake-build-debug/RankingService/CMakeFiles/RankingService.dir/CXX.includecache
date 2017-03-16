@@ -43,8 +43,6 @@ thrift/Thrift.h
 -
 thrift/TApplicationException.h
 -
-thrift/TBase.h
--
 thrift/protocol/TProtocol.h
 -
 thrift/transport/TTransport.h

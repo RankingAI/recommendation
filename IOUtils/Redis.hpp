@@ -60,8 +60,8 @@ class Redis {
 		  handle.sync_commit();
 		  // inner-sort by descent
 		  std::sort(result.begin(), result.end(),
-					[=](std::pair<T1, T2>& a, std::pair<T1, T2>& b){
-						return a.second > b.second;
+					[](const std::pair<T1, T2>& a, const std::pair<T1, T2>& b){
+						return std::get<1>(a) > std::get<1>(b);
 					}
 		  );
 		  // copy into result

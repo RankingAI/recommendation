@@ -327,6 +327,12 @@
       <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/Recommendation.cpp">
          <Option target="Recommendation"/>
       </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/Test/ConcurrencyTest.hpp">
+         <Option target="Test"/>
+      </Unit>
+      <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/Test/Singleton.hpp">
+         <Option target="Test"/>
+      </Unit>
       <Unit filename="/Users/yuanpingzhou/project/workspace/c++/recommendation/Test/Test.cpp">
          <Option target="Test"/>
       </Unit>

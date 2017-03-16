@@ -65,18 +65,18 @@ private:
 
 int main(int argc,char* argv[]){
 	// client
-	if((argc != 6) || (std::strlen(argv[2]) == 0) || (std::strlen(argv[3]) == 0)){
+	if((argc != 5) || (std::strlen(argv[1]) == 0) || (std::strlen(argv[2]) == 0)){
 	  std::cout << "Please check your parameters. " << std::endl;
-	  std::cout << format("Usage: %s RankingClient ServiceHost ServicePort BroadcasterID AdList\n") % argv[0];
+	  std::cout << format("Usage: %s ServiceHost ServicePort BroadcasterID AdList\n") % argv[0];
 	  return 1;
 	}
 
-	std::string host = argv[2];
+	std::string host = argv[1];
 	int port = -1;
-	std::string bid = argv[4];
-	std::string InitialAdList = argv[5];
+	std::string bid = argv[3];
+	std::string InitialAdList = argv[4];
 	try{
-	  port = lexical_cast<int>(argv[3]);
+	  port = lexical_cast<int>(argv[2]);
 	}
 	catch (exception& e){
 	  std::cerr << diagnostic_information(e,"atoi error") << std::endl;

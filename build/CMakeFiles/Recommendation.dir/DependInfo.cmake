@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/yuanpingzhou/project/workspace/c++/recommendation/RankingClient.cpp" "/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles/Recommendation.dir/RankingClient.cpp.o"
   "/Users/yuanpingzhou/project/workspace/c++/recommendation/Recommendation.cpp" "/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles/Recommendation.dir/Recommendation.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

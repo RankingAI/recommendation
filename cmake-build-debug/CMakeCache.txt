@@ -192,7 +192,7 @@ Project_SOURCE_DIR:STATIC=/Users/yuanpingzhou/project/workspace/c++/recommendati
 RankingClient_LIB_DEPENDS:STATIC=general;boost_timer;general;boost_system;general;thrift;
 
 //Dependencies for the target
-RankingService_LIB_DEPENDS:STATIC=general;thrift;
+RankingService_LIB_DEPENDS:STATIC=general;thrift;general;jsoncpp;
 
 //Value Computed by CMake
 Recommendation_BINARY_DIR:STATIC=/Users/yuanpingzhou/project/workspace/c++/recommendation/cmake-build-debug

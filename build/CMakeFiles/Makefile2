@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /Users/yuanpingzhou/project/workspace/c++/recommendation/buil
 CMakeFiles/Recommendation.dir/all: RankingService/CMakeFiles/RankingService.dir/all
 	$(MAKE) -f CMakeFiles/Recommendation.dir/build.make CMakeFiles/Recommendation.dir/depend
 	$(MAKE) -f CMakeFiles/Recommendation.dir/build.make CMakeFiles/Recommendation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=7,8,9 "Built target Recommendation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=10,11 "Built target Recommendation"
 .PHONY : CMakeFiles/Recommendation.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/Recommendation.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Recommendation.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Recommendation.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles 0
 .PHONY : CMakeFiles/Recommendation.dir/rule
@@ -93,6 +93,134 @@ CMakeFiles/Recommendation.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/Recommendation.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory IOUtils
+
+# Convenience name for "all" pass in the directory.
+IOUtils/all:
+
+.PHONY : IOUtils/all
+
+# Convenience name for "clean" pass in the directory.
+IOUtils/clean:
+
+.PHONY : IOUtils/clean
+
+# Convenience name for "preinstall" pass in the directory.
+IOUtils/preinstall:
+
+.PHONY : IOUtils/preinstall
+
+#=============================================================================
+# Directory level rules for directory Test
+
+# Convenience name for "all" pass in the directory.
+Test/all: Test/CMakeFiles/Test.dir/all
+
+.PHONY : Test/all
+
+# Convenience name for "clean" pass in the directory.
+Test/clean: Test/CMakeFiles/Test.dir/clean
+
+.PHONY : Test/clean
+
+# Convenience name for "preinstall" pass in the directory.
+Test/preinstall:
+
+.PHONY : Test/preinstall
+
+#=============================================================================
+# Target rules for target Test/CMakeFiles/Test.dir
+
+# All Build rule for target.
+Test/CMakeFiles/Test.dir/all:
+	$(MAKE) -f Test/CMakeFiles/Test.dir/build.make Test/CMakeFiles/Test.dir/depend
+	$(MAKE) -f Test/CMakeFiles/Test.dir/build.make Test/CMakeFiles/Test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=12,13 "Built target Test"
+.PHONY : Test/CMakeFiles/Test.dir/all
+
+# Include target in all.
+all: Test/CMakeFiles/Test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+Test/CMakeFiles/Test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 Test/CMakeFiles/Test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles 0
+.PHONY : Test/CMakeFiles/Test.dir/rule
+
+# Convenience name for target.
+Test: Test/CMakeFiles/Test.dir/rule
+
+.PHONY : Test
+
+# clean rule for target.
+Test/CMakeFiles/Test.dir/clean:
+	$(MAKE) -f Test/CMakeFiles/Test.dir/build.make Test/CMakeFiles/Test.dir/clean
+.PHONY : Test/CMakeFiles/Test.dir/clean
+
+# clean rule for target.
+clean: Test/CMakeFiles/Test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory RankingClient
+
+# Convenience name for "all" pass in the directory.
+RankingClient/all: RankingClient/CMakeFiles/RankingClient.dir/all
+
+.PHONY : RankingClient/all
+
+# Convenience name for "clean" pass in the directory.
+RankingClient/clean: RankingClient/CMakeFiles/RankingClient.dir/clean
+
+.PHONY : RankingClient/clean
+
+# Convenience name for "preinstall" pass in the directory.
+RankingClient/preinstall:
+
+.PHONY : RankingClient/preinstall
+
+#=============================================================================
+# Target rules for target RankingClient/CMakeFiles/RankingClient.dir
+
+# All Build rule for target.
+RankingClient/CMakeFiles/RankingClient.dir/all:
+	$(MAKE) -f RankingClient/CMakeFiles/RankingClient.dir/build.make RankingClient/CMakeFiles/RankingClient.dir/depend
+	$(MAKE) -f RankingClient/CMakeFiles/RankingClient.dir/build.make RankingClient/CMakeFiles/RankingClient.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target RankingClient"
+.PHONY : RankingClient/CMakeFiles/RankingClient.dir/all
+
+# Include target in all.
+all: RankingClient/CMakeFiles/RankingClient.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+RankingClient/CMakeFiles/RankingClient.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 RankingClient/CMakeFiles/RankingClient.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles 0
+.PHONY : RankingClient/CMakeFiles/RankingClient.dir/rule
+
+# Convenience name for target.
+RankingClient: RankingClient/CMakeFiles/RankingClient.dir/rule
+
+.PHONY : RankingClient
+
+# clean rule for target.
+RankingClient/CMakeFiles/RankingClient.dir/clean:
+	$(MAKE) -f RankingClient/CMakeFiles/RankingClient.dir/build.make RankingClient/CMakeFiles/RankingClient.dir/clean
+.PHONY : RankingClient/CMakeFiles/RankingClient.dir/clean
+
+# clean rule for target.
+clean: RankingClient/CMakeFiles/RankingClient.dir/clean
 
 .PHONY : clean
 
@@ -121,7 +249,7 @@ RankingService/preinstall:
 RankingService/CMakeFiles/RankingService.dir/all:
 	$(MAKE) -f RankingService/CMakeFiles/RankingService.dir/build.make RankingService/CMakeFiles/RankingService.dir/depend
 	$(MAKE) -f RankingService/CMakeFiles/RankingService.dir/build.make RankingService/CMakeFiles/RankingService.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target RankingService"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=6,7,8,9 "Built target RankingService"
 .PHONY : RankingService/CMakeFiles/RankingService.dir/all
 
 # Include target in all.
@@ -131,7 +259,7 @@ all: RankingService/CMakeFiles/RankingService.dir/all
 
 # Build rule for subdir invocation for target.
 RankingService/CMakeFiles/RankingService.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 RankingService/CMakeFiles/RankingService.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles 0
 .PHONY : RankingService/CMakeFiles/RankingService.dir/rule

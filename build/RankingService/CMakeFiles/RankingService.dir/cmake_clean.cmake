@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/RankingService.dir/RankingService.cpp.o"
-  "CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o"
   "CMakeFiles/RankingService.dir/__/RankingServiceProtocol/OnlineRankingService.cpp.o"
   "CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_constants.cpp.o"
   "CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_types.cpp.o"

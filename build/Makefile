@@ -179,6 +179,32 @@ Recommendation/fast:
 .PHONY : Recommendation/fast
 
 #=============================================================================
+# Target rules for targets named Test
+
+# Build rule for target.
+Test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test
+.PHONY : Test
+
+# fast build rule for target.
+Test/fast:
+	$(MAKE) -f Test/CMakeFiles/Test.dir/build.make Test/CMakeFiles/Test.dir/build
+.PHONY : Test/fast
+
+#=============================================================================
+# Target rules for targets named RankingClient
+
+# Build rule for target.
+RankingClient: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RankingClient
+.PHONY : RankingClient
+
+# fast build rule for target.
+RankingClient/fast:
+	$(MAKE) -f RankingClient/CMakeFiles/RankingClient.dir/build.make RankingClient/CMakeFiles/RankingClient.dir/build
+.PHONY : RankingClient/fast
+
+#=============================================================================
 # Target rules for targets named RankingService
 
 # Build rule for target.
@@ -190,33 +216,6 @@ RankingService: cmake_check_build_system
 RankingService/fast:
 	$(MAKE) -f RankingService/CMakeFiles/RankingService.dir/build.make RankingService/CMakeFiles/RankingService.dir/build
 .PHONY : RankingService/fast
-
-RankingClient.o: RankingClient.cpp.o
-
-.PHONY : RankingClient.o
-
-# target to build an object file
-RankingClient.cpp.o:
-	$(MAKE) -f CMakeFiles/Recommendation.dir/build.make CMakeFiles/Recommendation.dir/RankingClient.cpp.o
-.PHONY : RankingClient.cpp.o
-
-RankingClient.i: RankingClient.cpp.i
-
-.PHONY : RankingClient.i
-
-# target to preprocess a source file
-RankingClient.cpp.i:
-	$(MAKE) -f CMakeFiles/Recommendation.dir/build.make CMakeFiles/Recommendation.dir/RankingClient.cpp.i
-.PHONY : RankingClient.cpp.i
-
-RankingClient.s: RankingClient.cpp.s
-
-.PHONY : RankingClient.s
-
-# target to generate assembly for a file
-RankingClient.cpp.s:
-	$(MAKE) -f CMakeFiles/Recommendation.dir/build.make CMakeFiles/Recommendation.dir/RankingClient.cpp.s
-.PHONY : RankingClient.cpp.s
 
 Recommendation.o: Recommendation.cpp.o
 
@@ -259,10 +258,9 @@ help:
 	@echo "... install/strip"
 	@echo "... rebuild_cache"
 	@echo "... Recommendation"
+	@echo "... Test"
+	@echo "... RankingClient"
 	@echo "... RankingService"
-	@echo "... RankingClient.o"
-	@echo "... RankingClient.i"
-	@echo "... RankingClient.s"
 	@echo "... Recommendation.o"
 	@echo "... Recommendation.i"
 	@echo "... Recommendation.s"

@@ -13,6 +13,8 @@
 #include <thrift/transport/TServerSocket.h>
 #include <thrift/transport/TBufferTransports.h>
 #include <thrift/transport/TSocket.h>
+#include <json/json.h>
+#include <json/value.h>
 
 // boost
 #include <boost/algorithm/string.hpp>
@@ -21,11 +23,12 @@
 #include <boost/make_shared.hpp>
 #include <boost/numeric/ublas/vector.hpp>
 #include <boost/container/set.hpp>
-#include <boost/sort/spreadsort/string_sort.hpp>
+//#include <boost/sort/spreadsort/string_sort.hpp>
 
 // customized
 #include "../RankingServiceProtocol/OnlineRankingService.h"
 #include "../IOUtils/Redis.hpp"
+#include "../IOUtils/Config.hpp"
 #include <iostream>
 #include <map>
 
@@ -67,30 +70,38 @@ std::string GetFeatures(const std::vector<std::pair<std::string,int>>& vec){
  */
 class OnlineRankingServiceHandler : virtual public OnlineRankingServiceIf {
 public:
-	OnlineRankingServiceHandler() {}
 
 	void ranking(std::string& _return, const std::string& BroadcasterId, const std::string& RequestList) {
 
 		#ifdef DEBUG
 			REQUESTOUTPUT(BroadcasterId,RequestList);
 		#endif
-	  // convert request list into a hash set
-		std::vector<std::string> ResultList;
-	  	std::vector<std::string> TmpList;
-	  	boost::split(TmpList,RequestList,boost::is_any_of(","));
-	  	std::set<std::string> RequestSet(TmpList.begin(),TmpList.end());
+	  	Json::Value ResultListJsonContainer;
+	  	std::set<std::string> RequestSet;
+	  	Json::Value RequestListJsonContainer;
+	  	Json::Reader JsonReader;
+		auto ret = JsonReader.parse(RequestList, RequestListJsonContainer);
+	 	if(ret == false) {
+		  std::cerr << "Parse json request failed." << std::endl;
+		}
+	  	for(auto iter = RequestListJsonContainer.begin();iter != RequestListJsonContainer.end();iter++){
+		  RequestSet.insert((*iter).asString());
+		}
+
 	  	int RequestSize = RequestSet.size();
 
 	  // validate for Request List whose elements should not be duplicated
-	  	if(TmpList.size() == RequestSet.size()) {
+	  	if(RequestListJsonContainer.size() == RequestSize) {
 
 			// ----------------- Interact with redis
 			// get all neighbour features
 			std::vector<std::vector<std::pair<std::string, int>>> AllFeatures;
-			Redis *hd = new Redis(RedisHost, RedisPort);
+			Redis *hd = new Redis(Config::GetInstance().GetValue<std::string>("REDIS_SERVER_HOST"),
+					Config::GetInstance().GetValue<int>("REDIS_SERVER_PORT"));
 			// get features for its self
 			std::vector<std::pair<std::string, int>> features;
-			hd->HGetAll(features, RedisDB, "BROADCASTER_ENABLE_FREQUENCY:" + BroadcasterId);
+			hd->HGetAll(features, Config::GetInstance().GetValue<int>("REDIS_SERVER_DB"),
+						Config::GetInstance().GetValue<std::string>("ENABLE_FREQUENCY_PREFIX") + BroadcasterId);
 			if (features.size() > 0) {
 			  AllFeatures.push_back(features);
 			}
@@ -101,7 +112,8 @@ public:
 
 			// get neighbour broadcasters
 			std::vector<std::pair<std::string, double>> NeighborBroadcasters;
-			hd->HGetAll(NeighborBroadcasters, RedisDB, "BORADCASTER_SIMILARITY:" + BroadcasterId);
+			hd->HGetAll(NeighborBroadcasters, Config::GetInstance().GetValue<int>("REDIS_SERVER_DB"),
+						Config::GetInstance().GetValue<std::string>("SIMILARITY_PREFIX")+ BroadcasterId);
 
 			#ifdef DEBUG
 				NEIGHBOROUTPUT(BroadcasterId,NeighborBroadcasters);
@@ -114,7 +126,8 @@ public:
 				   it != NeighborBroadcasters.end(); it++) {
 				std::string NeighborBroadcaster = (*it).first;
 				std::vector<std::pair<std::string, int>> NeighborFeatures;
-				hd->HGetAll(NeighborFeatures, RedisDB, "BROADCASTER_ENABLE_FREQUENCY:" + NeighborBroadcaster);
+				hd->HGetAll(NeighborFeatures, Config::GetInstance().GetValue<int>("REDIS_SERVER_PORT"),
+							Config::GetInstance().GetValue<std::string>("ENABLE_FREQUENCY_PREFIX")+ NeighborBroadcaster);
 
 				#ifdef DEBUG
 					FEATUREOUTPUT(NeighborBroadcaster,NeighborFeatures);
@@ -136,7 +149,8 @@ public:
 			  for (it1 = (*it).begin(); it1 != (*it).end(); it1++) {
 				std::string feature = (*it1).first;
 				if (RequestSet.find(feature) != RequestSet.end()) {
-				  ResultList.push_back(feature);
+				  //ResultList.push_back(feature);
+				  ResultListJsonContainer.append(Json::Value(feature));
 				  RequestSet.erase(feature);
 				}
 			  }
@@ -146,15 +160,18 @@ public:
 			if ((RequestSet.size() > 0) && (RequestSet.size() < RequestSize)) {
 			  std::set<std::string>::iterator it;
 			  for (it = RequestSet.begin(); it != RequestSet.end(); it++) {
-				ResultList.push_back((*it));
+				//ResultList.push_back((*it));
+				ResultListJsonContainer.append(Json::Value((*it)));
 			  }
 			} // end of if
 		} // end of if TmpList.size() == RequestSet.size()
 
 		// validate the lenght of result ad list
-		if(ResultList.size() == RequestSize){
-			_return = algorithm::join(ResultList,",");
-	  	}
+		if(ResultListJsonContainer.size() == RequestSize){
+			//_return = algorithm::join(ResultList,",");
+			Json::StyledWriter styledWriter;
+			_return = styledWriter.write(ResultListJsonContainer);
+		}
 	  	else{
 			_return = RequestList;
 	  	}
@@ -164,9 +181,9 @@ public:
 	}
 
 private:
-	std::string RedisHost = "127.0.0.1";
-	int RedisPort = 6379;
-	int RedisDB = 10;
+	//const std::string RedisHost = "10.0.8.81";
+	//const int RedisPort = 6379;
+	//const int RedisDB = 10;
 
 };
 
@@ -196,11 +213,10 @@ public:
 class RankingService {
 private:
 	TServer* serverPtr = nullptr;
-	int ServicePort = -1;
 	const int WorkerCount = 4;
 
 public:
-	RankingService(const int port_ = 5001):ServicePort(port_) {
+	RankingService(int ServerPort_){
 	  // Thread manager, reuse of threads
 	  boost::shared_ptr<ThreadManager> ThreadManager_ = ThreadManager::newSimpleThreadManager(WorkerCount);
 	  ThreadManager_->threadFactory(boost::make_shared<PlatformThreadFactory>());
@@ -208,12 +224,25 @@ public:
 	  // Server-side level: multi-thread non-block IO mode
 	  serverPtr = new TThreadPoolServer(
 	  	boost::make_shared<OnlineRankingServiceProcessorFactory>(boost::make_shared<OnlineRankingServiceHandlerFactory>()),
-	  	boost::make_shared<TServerSocket>(ServicePort),
+	  	boost::make_shared<TServerSocket>(ServerPort_),
 	  	boost::make_shared<TBufferedTransportFactory>(),
 	  	boost::make_shared<TBinaryProtocolFactory>(),
 		ThreadManager_
 	  );
 	}
+
+	static boost::optional<RankingService> GetInstance(const std::string ConfigFile){
+		int rp = -1;
+		try {
+		  Config::GetInstance().Init(ConfigFile.c_str());
+		  Config::GetInstance().GetValue<int>("THRIFT_SERVER_PORT");
+		}
+		catch (const exception& e){
+		  return boost::none;
+		}
+	  	return RankingService(rp);
+	}
+
 	~RankingService(){
 	  serverPtr->stop();
 	  serverPtr = nullptr;

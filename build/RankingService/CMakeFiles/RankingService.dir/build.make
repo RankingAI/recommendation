@@ -57,57 +57,9 @@ include RankingService/CMakeFiles/RankingService.dir/progress.make
 # Include the compile flags for this target's objects.
 include RankingService/CMakeFiles/RankingService.dir/flags.make
 
-RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.o: RankingService/CMakeFiles/RankingService.dir/flags.make
-RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.o: ../RankingService/RankingService.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.o"
-	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService && /usr/local/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RankingService.dir/RankingService.cpp.o -c /Users/yuanpingzhou/project/workspace/c++/recommendation/RankingService/RankingService.cpp
-
-RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RankingService.dir/RankingService.cpp.i"
-	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService && /usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yuanpingzhou/project/workspace/c++/recommendation/RankingService/RankingService.cpp > CMakeFiles/RankingService.dir/RankingService.cpp.i
-
-RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RankingService.dir/RankingService.cpp.s"
-	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService && /usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yuanpingzhou/project/workspace/c++/recommendation/RankingService/RankingService.cpp -o CMakeFiles/RankingService.dir/RankingService.cpp.s
-
-RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.o.requires:
-
-.PHONY : RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.o.requires
-
-RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.o.provides: RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.o.requires
-	$(MAKE) -f RankingService/CMakeFiles/RankingService.dir/build.make RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.o.provides.build
-.PHONY : RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.o.provides
-
-RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.o.provides.build: RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.o
-
-
-RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o: RankingService/CMakeFiles/RankingService.dir/flags.make
-RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o: ../IOUtils/Redis.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o"
-	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService && /usr/local/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o -c /Users/yuanpingzhou/project/workspace/c++/recommendation/IOUtils/Redis.cpp
-
-RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.i"
-	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService && /usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yuanpingzhou/project/workspace/c++/recommendation/IOUtils/Redis.cpp > CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.i
-
-RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.s"
-	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService && /usr/local/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yuanpingzhou/project/workspace/c++/recommendation/IOUtils/Redis.cpp -o CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.s
-
-RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o.requires:
-
-.PHONY : RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o.requires
-
-RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o.provides: RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o.requires
-	$(MAKE) -f RankingService/CMakeFiles/RankingService.dir/build.make RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o.provides.build
-.PHONY : RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o.provides
-
-RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o.provides.build: RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o
-
-
 RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/OnlineRankingService.cpp.o: RankingService/CMakeFiles/RankingService.dir/flags.make
 RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/OnlineRankingService.cpp.o: ../RankingServiceProtocol/OnlineRankingService.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/OnlineRankingService.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/OnlineRankingService.cpp.o"
 	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService && /usr/local/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RankingService.dir/__/RankingServiceProtocol/OnlineRankingService.cpp.o -c /Users/yuanpingzhou/project/workspace/c++/recommendation/RankingServiceProtocol/OnlineRankingService.cpp
 
 RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/OnlineRankingService.cpp.i: cmake_force
@@ -131,7 +83,7 @@ RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/OnlineRan
 
 RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_constants.cpp.o: RankingService/CMakeFiles/RankingService.dir/flags.make
 RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_constants.cpp.o: ../RankingServiceProtocol/RankingService_constants.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_constants.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_constants.cpp.o"
 	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService && /usr/local/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_constants.cpp.o -c /Users/yuanpingzhou/project/workspace/c++/recommendation/RankingServiceProtocol/RankingService_constants.cpp
 
 RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_constants.cpp.i: cmake_force
@@ -155,7 +107,7 @@ RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingSe
 
 RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_types.cpp.o: RankingService/CMakeFiles/RankingService.dir/flags.make
 RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_types.cpp.o: ../RankingServiceProtocol/RankingService_types.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_types.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_types.cpp.o"
 	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService && /usr/local/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_types.cpp.o -c /Users/yuanpingzhou/project/workspace/c++/recommendation/RankingServiceProtocol/RankingService_types.cpp
 
 RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_types.cpp.i: cmake_force
@@ -179,8 +131,6 @@ RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingSe
 
 # Object files for target RankingService
 RankingService_OBJECTS = \
-"CMakeFiles/RankingService.dir/RankingService.cpp.o" \
-"CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o" \
 "CMakeFiles/RankingService.dir/__/RankingServiceProtocol/OnlineRankingService.cpp.o" \
 "CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_constants.cpp.o" \
 "CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_types.cpp.o"
@@ -188,14 +138,12 @@ RankingService_OBJECTS = \
 # External object files for target RankingService
 RankingService_EXTERNAL_OBJECTS =
 
-RankingService/libRankingService.a: RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.o
-RankingService/libRankingService.a: RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o
 RankingService/libRankingService.a: RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/OnlineRankingService.cpp.o
 RankingService/libRankingService.a: RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_constants.cpp.o
 RankingService/libRankingService.a: RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_types.cpp.o
 RankingService/libRankingService.a: RankingService/CMakeFiles/RankingService.dir/build.make
 RankingService/libRankingService.a: RankingService/CMakeFiles/RankingService.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libRankingService.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yuanpingzhou/project/workspace/c++/recommendation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libRankingService.a"
 	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService && $(CMAKE_COMMAND) -P CMakeFiles/RankingService.dir/cmake_clean_target.cmake
 	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build/RankingService && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RankingService.dir/link.txt --verbose=$(VERBOSE)
 
@@ -204,8 +152,6 @@ RankingService/CMakeFiles/RankingService.dir/build: RankingService/libRankingSer
 
 .PHONY : RankingService/CMakeFiles/RankingService.dir/build
 
-RankingService/CMakeFiles/RankingService.dir/requires: RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.o.requires
-RankingService/CMakeFiles/RankingService.dir/requires: RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o.requires
 RankingService/CMakeFiles/RankingService.dir/requires: RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/OnlineRankingService.cpp.o.requires
 RankingService/CMakeFiles/RankingService.dir/requires: RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_constants.cpp.o.requires
 RankingService/CMakeFiles/RankingService.dir/requires: RankingService/CMakeFiles/RankingService.dir/__/RankingServiceProtocol/RankingService_types.cpp.o.requires

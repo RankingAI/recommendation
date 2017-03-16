@@ -180,60 +180,6 @@ RankingService/fast:
 	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build && $(MAKE) -f RankingService/CMakeFiles/RankingService.dir/build.make RankingService/CMakeFiles/RankingService.dir/build
 .PHONY : RankingService/fast
 
-RankingService.o: RankingService.cpp.o
-
-.PHONY : RankingService.o
-
-# target to build an object file
-RankingService.cpp.o:
-	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build && $(MAKE) -f RankingService/CMakeFiles/RankingService.dir/build.make RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.o
-.PHONY : RankingService.cpp.o
-
-RankingService.i: RankingService.cpp.i
-
-.PHONY : RankingService.i
-
-# target to preprocess a source file
-RankingService.cpp.i:
-	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build && $(MAKE) -f RankingService/CMakeFiles/RankingService.dir/build.make RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.i
-.PHONY : RankingService.cpp.i
-
-RankingService.s: RankingService.cpp.s
-
-.PHONY : RankingService.s
-
-# target to generate assembly for a file
-RankingService.cpp.s:
-	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build && $(MAKE) -f RankingService/CMakeFiles/RankingService.dir/build.make RankingService/CMakeFiles/RankingService.dir/RankingService.cpp.s
-.PHONY : RankingService.cpp.s
-
-__/IOUtils/Redis.o: __/IOUtils/Redis.cpp.o
-
-.PHONY : __/IOUtils/Redis.o
-
-# target to build an object file
-__/IOUtils/Redis.cpp.o:
-	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build && $(MAKE) -f RankingService/CMakeFiles/RankingService.dir/build.make RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.o
-.PHONY : __/IOUtils/Redis.cpp.o
-
-__/IOUtils/Redis.i: __/IOUtils/Redis.cpp.i
-
-.PHONY : __/IOUtils/Redis.i
-
-# target to preprocess a source file
-__/IOUtils/Redis.cpp.i:
-	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build && $(MAKE) -f RankingService/CMakeFiles/RankingService.dir/build.make RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.i
-.PHONY : __/IOUtils/Redis.cpp.i
-
-__/IOUtils/Redis.s: __/IOUtils/Redis.cpp.s
-
-.PHONY : __/IOUtils/Redis.s
-
-# target to generate assembly for a file
-__/IOUtils/Redis.cpp.s:
-	cd /Users/yuanpingzhou/project/workspace/c++/recommendation/build && $(MAKE) -f RankingService/CMakeFiles/RankingService.dir/build.make RankingService/CMakeFiles/RankingService.dir/__/IOUtils/Redis.cpp.s
-.PHONY : __/IOUtils/Redis.cpp.s
-
 __/RankingServiceProtocol/OnlineRankingService.o: __/RankingServiceProtocol/OnlineRankingService.cpp.o
 
 .PHONY : __/RankingServiceProtocol/OnlineRankingService.o
@@ -329,12 +275,6 @@ help:
 	@echo "... install"
 	@echo "... install/strip"
 	@echo "... rebuild_cache"
-	@echo "... RankingService.o"
-	@echo "... RankingService.i"
-	@echo "... RankingService.s"
-	@echo "... __/IOUtils/Redis.o"
-	@echo "... __/IOUtils/Redis.i"
-	@echo "... __/IOUtils/Redis.s"
 	@echo "... __/RankingServiceProtocol/OnlineRankingService.o"
 	@echo "... __/RankingServiceProtocol/OnlineRankingService.i"
 	@echo "... __/RankingServiceProtocol/OnlineRankingService.s"
