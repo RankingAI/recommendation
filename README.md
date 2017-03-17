@@ -2,3 +2,4 @@ This project will end up with embracing recommendation service with high perform
 
 C++ will be the kernel language, at the meantime features of c++11 and boost will included.
 
+Recommendation online service is under going, the other modules will be brought up here after then.
