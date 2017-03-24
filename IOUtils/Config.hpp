@@ -12,8 +12,8 @@ namespace opt = boost::program_options;
 
 class Config{
 public:
-	static Config& GetInstance(){
-	  static Config instance;
+	static Config* GetInstance(){
+	  static Config* instance = new Config();
 	  return instance;
 	}
 	void Init(const std::string InputFile);

@@ -30,9 +30,9 @@ int main(int argc,char* argv[]) {
   catch(const opt::required_option& e){
 	std::cerr << "Failed to parse parameters, " << e.what() << std::endl;
   }
-  boost::optional<RankingService> rs = RankingService::GetInstance(vm["config"].as<std::string>());
+  boost::optional<RankingService*> rs = RankingService::GetInstance(vm["config"].as<std::string>());
   if(rs){
-	rs.get().run();
+	rs.get()->run();
   }
   else{
     std::cout << "Initial ranking service failed, you'd better check your configure file thoroughly." << std::endl;

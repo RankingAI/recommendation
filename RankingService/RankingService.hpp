@@ -6,6 +6,7 @@
 #define RECOMMENDATION_RANKINGSERVICE_H
 
 // thrift
+#include <thrift/server/TNonblockingServer.h>
 #include <thrift/concurrency/ThreadManager.h>
 #include <thrift/concurrency/PlatformThreadFactory.h>
 #include <thrift/protocol/TBinaryProtocol.h>
@@ -23,12 +24,13 @@
 #include <boost/make_shared.hpp>
 #include <boost/numeric/ublas/vector.hpp>
 #include <boost/container/set.hpp>
-//#include <boost/sort/spreadsort/string_sort.hpp>
 
 // customized
 #include "../RankingServiceProtocol/OnlineRankingService.h"
-#include "../IOUtils/Redis.hpp"
+#include <../IOUtils/RedisClient.hpp>
 #include "../IOUtils/Config.hpp"
+
+// standard
 #include <iostream>
 #include <map>
 
@@ -90,85 +92,71 @@ public:
 
 	  	int RequestSize = RequestSet.size();
 
-	  // validate for Request List whose elements should not be duplicated
-	  	if(RequestListJsonContainer.size() == RequestSize) {
-
-			// ----------------- Interact with redis
-			// get all neighbour features
-			std::vector<std::vector<std::pair<std::string, int>>> AllFeatures;
-			Redis *hd = new Redis(Config::GetInstance().GetValue<std::string>("REDIS_SERVER_HOST"),
-					Config::GetInstance().GetValue<int>("REDIS_SERVER_PORT"));
-			// get features for its self
-			std::vector<std::pair<std::string, int>> features;
-			hd->HGetAll(features, Config::GetInstance().GetValue<int>("REDIS_SERVER_DB"),
-						Config::GetInstance().GetValue<std::string>("ENABLE_FREQUENCY_PREFIX") + BroadcasterId);
-			if (features.size() > 0) {
-			  AllFeatures.push_back(features);
-			}
-
-			#ifdef DEBUG
-				FEATUREOUTPUT(BroadcasterId,features);
-			#endif
-
+	  	// validate for Request List whose elements should not be duplicated
+	  	std::vector<std::vector<std::pair<std::string, int>>> AllFeatures;
+	  	if(RequestListJsonContainer.size() == RequestSize){
+		  RedisClient hd(Config::GetInstance()->GetValue<std::string>("REDIS_SERVER_HOST"),
+						 Config::GetInstance()->GetValue<int>("REDIS_SERVER_PORT"),
+						 Config::GetInstance()->GetValue<int>("REDIS_SERVER_DB"),
+						 Config::GetInstance()->GetValue<int>("REDIS_TIMEOUT")
+		  );
+		  if(hd.GetState()) { // state of connection
 			// get neighbour broadcasters
 			std::vector<std::pair<std::string, double>> NeighborBroadcasters;
-			hd->HGetAll(NeighborBroadcasters, Config::GetInstance().GetValue<int>("REDIS_SERVER_DB"),
-						Config::GetInstance().GetValue<std::string>("SIMILARITY_PREFIX")+ BroadcasterId);
-
-			#ifdef DEBUG
-				NEIGHBOROUTPUT(BroadcasterId,NeighborBroadcasters);
-			#endif
-
-			// get neighbour features of broadcaster
-			if (NeighborBroadcasters.size() > 0) {
-
-			  for (std::vector<std::pair<std::string, double>>::iterator it = NeighborBroadcasters.begin();
-				   it != NeighborBroadcasters.end(); it++) {
-				std::string NeighborBroadcaster = (*it).first;
-				std::vector<std::pair<std::string, int>> NeighborFeatures;
-				hd->HGetAll(NeighborFeatures, Config::GetInstance().GetValue<int>("REDIS_SERVER_PORT"),
-							Config::GetInstance().GetValue<std::string>("ENABLE_FREQUENCY_PREFIX")+ NeighborBroadcaster);
-
-				#ifdef DEBUG
-					FEATUREOUTPUT(NeighborBroadcaster,NeighborFeatures);
-				#endif
-
-				if(NeighborFeatures.size() > 0) {
-				  AllFeatures.push_back(NeighborFeatures);
+			hd.HGetAll(NeighborBroadcasters,
+					   Config::GetInstance()->GetValue<std::string>("SIMILARITY_PREFIX") + BroadcasterId);
+			if (hd.GetState()) { // state of getting neighbour broadcasters
+#ifdef DEBUG
+			  NEIGHBOROUTPUT(BroadcasterId,NeighborBroadcasters);
+#endif
+			  //  initialize feature container
+			  AllFeatures.resize(NeighborBroadcasters.size() + 1);
+			  // get neighbour broadcasters' features
+			  if (NeighborBroadcasters.size() > 0) {
+				std::vector<std::string> nbs;
+				nbs.push_back(Config::GetInstance()->GetValue<std::string>("ENABLE_FREQUENCY_PREFIX") + BroadcasterId);
+				for (auto it = NeighborBroadcasters.begin(); it != NeighborBroadcasters.end(); it++) {
+				  nbs.push_back(Config::GetInstance()->GetValue<std::string>("ENABLE_FREQUENCY_PREFIX") + (*it).first);
 				}
-			  } // end of for
-
-			}// end of if NeighborBroadcasters.size() > 0
-			hd->release();
-			// -------------- end of interacting with redis
+				hd.HMultGetAll(AllFeatures, nbs);
+				if (hd.GetState() == false) {
+				  std::cout << "Failed to get neighbour features." << std::endl;
+				}
+			  }// end of if NeighborBroadcasters.size() > 0
+			}
+			else {
+			  std::cout << "Failed to get neighbours." << std::endl;
+			}
+		  }
+		  else{
+			std::cout << "Failed to establish redis handle." << std::endl;
+		  }
+		  hd.Release();
 
 			// construct result feature list
-			std::vector<std::vector<std::pair<std::string, int>>>::iterator it;
-			for (it = AllFeatures.begin(); it != AllFeatures.end(); it++) {
-			  std::vector<std::pair<std::string, int>>::iterator it1;
-			  for (it1 = (*it).begin(); it1 != (*it).end(); it1++) {
-				std::string feature = (*it1).first;
-				if (RequestSet.find(feature) != RequestSet.end()) {
-				  //ResultList.push_back(feature);
-				  ResultListJsonContainer.append(Json::Value(feature));
-				  RequestSet.erase(feature);
-				}
+		  std::vector<std::vector<std::pair<std::string, int>>>::iterator it;
+		  for (it = AllFeatures.begin(); it != AllFeatures.end(); it++) {
+		    std::vector<std::pair<std::string, int>>::iterator it1;
+			for (it1 = (*it).begin(); it1 != (*it).end(); it1++) {
+			  std::string feature = (*it1).first;
+			  if (RequestSet.find(feature) != RequestSet.end()) {
+			    ResultListJsonContainer.append(Json::Value(feature));
+			    RequestSet.erase(feature);
 			  }
-			} // end of for
+			}
+		  } // end of for
 
-			// append the remained features into result list
-			if ((RequestSet.size() > 0) && (RequestSet.size() < RequestSize)) {
-			  std::set<std::string>::iterator it;
-			  for (it = RequestSet.begin(); it != RequestSet.end(); it++) {
-				//ResultList.push_back((*it));
-				ResultListJsonContainer.append(Json::Value((*it)));
-			  }
-			} // end of if
+		  // append the remained features into result list
+		  if ((RequestSet.size() > 0) && (RequestSet.size() < RequestSize)) {
+		    std::set<std::string>::iterator it;
+		    for (it = RequestSet.begin(); it != RequestSet.end(); it++) {
+		      ResultListJsonContainer.append(Json::Value((*it)));
+			}
+		  } // end of if
 		} // end of if TmpList.size() == RequestSet.size()
 
 		// validate the lenght of result ad list
 		if(ResultListJsonContainer.size() == RequestSize){
-			//_return = algorithm::join(ResultList,",");
 			Json::StyledWriter styledWriter;
 			_return = styledWriter.write(ResultListJsonContainer);
 		}
@@ -179,12 +167,6 @@ public:
 			RESULTOUTPUT(BroadcasterId,_return);
 		#endif
 	}
-
-private:
-	//const std::string RedisHost = "10.0.8.81";
-	//const int RedisPort = 6379;
-	//const int RedisDB = 10;
-
 };
 
 /*
@@ -200,47 +182,59 @@ public:
 	  std::cout << format("\t PeerHost: %s ") % sock->getPeerHost();
 	  std::cout << format("\t PeerAddress: %s ") % sock->getPeerAddress();
 	  std::cout << format("\t PeerPort: %s \n") % sock->getPeerPort();
+	 //
+	  OnlineRankingServiceHandlerFactory::RequestCount+= 1;
+	  std::cout << OnlineRankingServiceHandlerFactory::RequestCount << std::endl;
 	  return new OnlineRankingServiceHandler();
 	}
-	virtual void releaseHandler(OnlineRankingServiceIf* handler){
-	  delete handler;
+	virtual void releaseHandler(OnlineRankingServiceIf* handler) {
+		delete handler;
+	  	handler = nullptr;
 	}
+
+private:
+	static int RequestCount;
 };
+
+int OnlineRankingServiceHandlerFactory::RequestCount = 0;
 
 /*
  * ranking service entry
  */
 class RankingService {
 private:
-	TServer* serverPtr = nullptr;
-	const int WorkerCount = 4;
+	boost::shared_ptr<TNonblockingServer> serverPtr = nullptr;
+	const int WorkerCount = 100;
 
 public:
 	RankingService(int ServerPort_){
+
 	  // Thread manager, reuse of threads
 	  boost::shared_ptr<ThreadManager> ThreadManager_ = ThreadManager::newSimpleThreadManager(WorkerCount);
 	  ThreadManager_->threadFactory(boost::make_shared<PlatformThreadFactory>());
 	  ThreadManager_->start();
+
 	  // Server-side level: multi-thread non-block IO mode
-	  serverPtr = new TThreadPoolServer(
-	  	boost::make_shared<OnlineRankingServiceProcessorFactory>(boost::make_shared<OnlineRankingServiceHandlerFactory>()),
-	  	boost::make_shared<TServerSocket>(ServerPort_),
-	  	boost::make_shared<TBufferedTransportFactory>(),
-	  	boost::make_shared<TBinaryProtocolFactory>(),
-		ThreadManager_
+	  serverPtr = boost::make_shared<TNonblockingServer>(
+			  //boost::make_shared<OnlineRankingServiceProcessorFactory>(boost::make_shared<OnlineRankingServiceHandlerFactory>()),
+			  boost::make_shared<OnlineRankingServiceProcessor>(boost::make_shared<OnlineRankingServiceHandler>()),
+			  boost::make_shared<TBinaryProtocolFactory>(),
+			  ServerPort_,
+			  ThreadManager_
 	  );
 	}
 
-	static boost::optional<RankingService> GetInstance(const std::string ConfigFile){
+	static boost::optional<RankingService*> GetInstance(const std::string& ConfigFile){
+
 		int rp = -1;
 		try {
-		  Config::GetInstance().Init(ConfigFile.c_str());
-		  Config::GetInstance().GetValue<int>("THRIFT_SERVER_PORT");
+		  Config::GetInstance()->Init(ConfigFile.c_str());
+		  rp = Config::GetInstance()->GetValue<int>("THRIFT_SERVER_PORT");
+		  return new RankingService(rp);
 		}
 		catch (const exception& e){
 		  return boost::none;
 		}
-	  	return RankingService(rp);
 	}
 
 	~RankingService(){

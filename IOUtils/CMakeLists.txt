@@ -5,8 +5,8 @@ cmake_minimum_required(VERSION 3.5)
 # export to parent directory, for the convenience of external references
 #SET(IOUTILS_INCLUDE_DIR ${IOUTILS_INCLUDE_DIR} PARENT_SCOPE)
 #
-SET(REDIS_LIBS cpp_redis tacopie)
-SET(IOUTILS_SRCS Redis.hpp Config.hpp)
+SET(REDIS_LIBS hiredis)
+SET(IOUTILS_SRCS RedisClient.hpp Config.hpp)
 
 # ===================== build
 if(TARGET IOUtils)
@@ -15,7 +15,8 @@ else()
   # local include directory, -L
   #INCLUDE_DIRECTORIES(${IOUTILS_INCLUDE_DIR})
   # redis include directory, -L
-  INCLUDE_DIRECTORIES(/usr/local/include/cpp_redis /usr/local/include/tacopie)
+  #INCLUDE_DIRECTORIES(/usr/local/include/cpp_redis /usr/local/include/tacopie)
+  INCLUDE_DIRECTORIES(/usr/local/include/hiredis)
   # -o libioutils.la *.hpp
   ADD_LIBRARY(IOUtils INTERFACE)
   # redis libs, -l

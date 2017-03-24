@@ -18,7 +18,7 @@ ELSE()
   # generate static library, this is NOT a HEADER-ONLY case
   ADD_LIBRARY(RankingService ${RANKINGSERVICE_SRCS} ${THRIFT_GENERATED_SRCS})
   # thrift IOUtils libs, -l
-  TARGET_LINK_LIBRARIES(RankingService thrift IOUtils jsoncpp)
+  TARGET_LINK_LIBRARIES(RankingService thrift thriftnb event IOUtils jsoncpp)
 ENDIF()
 
 # ============================ install

@@ -10,11 +10,11 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/exception/all.hpp>
 #include <boost/program_options.hpp>
-#include <boost/program_options/errors.hpp>
 #include <boost/variant.hpp>
 
 #include "./ConcurrencyTest.hpp"
 #include "./Singleton.hpp"
+#include "./RedisTest.hpp"
 
 namespace opt = boost::program_options;
 
@@ -63,6 +63,16 @@ int main(int argc,char* argv[]){
 	  Singleton::GetInstance().Init(InputFile);
 	  std::cout << Singleton::GetInstance().GetValue<std::string>("REDIS_SERVER_HOST")<< "\t"
 				<< Singleton::GetInstance().GetValue<int>("REDIS_SERVER_PORT") << std::endl;
+	}
+	else if (iequals(cmd,"RedisTest")){
+	  std::vector<std::thread> threads;
+	  for(int i = 0;i < 1;i++){
+		threads.push_back(std::thread(&request));
+	  }
+
+	  for(auto& th : threads){
+		th.join();
+	  }
 	}
   }
 
